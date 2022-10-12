@@ -9,7 +9,7 @@ const App = () => {
     console.log('vote', id)
     dispatch({
       type: 'VOTE',
-      data: anecdotes.find(anec => anec.id === id)
+      data: { id: id }
     })
   }
 
