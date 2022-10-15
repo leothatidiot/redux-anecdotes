@@ -20,7 +20,7 @@ const asObject = (anecdote) => {
 export const voteTo = (id) => {
   return {
     type: 'VOTE',
-    data: { id: id}
+    data: { id: id }
   }
 }
 
