@@ -31,7 +31,7 @@ export const createAnecdote = (anecdote) => {
   }
 }
 
-const initialState = anecdotesAtStart.map(asObject)
+export const initialState = anecdotesAtStart.map(asObject)
 
 const anecdoteReducer = (state = initialState, action) => {
   console.log('state now: ', state)
