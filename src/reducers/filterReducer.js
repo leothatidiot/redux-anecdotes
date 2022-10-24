@@ -1,9 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { initialState } from "./anecdoteReducer";
 
 const filterSlice = createSlice({
   name: 'filter',
-  initialState,
+  initialState: [],
   reducers: {
     setAnecdotesToShow(state, action) {
       return action.payload
