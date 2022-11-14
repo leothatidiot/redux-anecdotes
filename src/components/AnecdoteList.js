@@ -24,7 +24,7 @@ const AnecdoteList = () => {
     <>
       <h2>Anecdotes</h2>
       <Filter />
-      {anecdotesToShow.map(anecdote =>
+      {anecdotes.map(anecdote =>
         <div key={anecdote.id}>
           <div>
             {anecdote.content}
