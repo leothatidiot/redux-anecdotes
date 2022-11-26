@@ -1,16 +1,13 @@
-import { useDispatch, useSelector } from "react-redux";
-import { setAnecdotesToShow } from "../reducers/filterReducer";
+import { useDispatch } from "react-redux";
+import { setFilterString } from "../reducers/filterReducer";
 
 const Filter = () => {
-  const anecdotes = useSelector(state => state.anecdotes)
   const dispatch = useDispatch()
 
   const handleChange = (event) => {
     // input-field value is in variable event.target.value
-    const filtered = anecdotes.filter(anec => 
-      anec.content.includes(event.target.value)
-    )
-    dispatch(setAnecdotesToShow(filtered))
+    const filterString = event.target.value
+    dispatch(setFilterString(filterString))
   }
   const style = {
     marginBottom: 10

@@ -1,21 +1,19 @@
 import { configureStore } from '@reduxjs/toolkit'
 import notificationReducer from './reducers/notificationReducer'
-import anecdoteReducer, { initializeAnecdotes, setAnecdotes } from './reducers/anecdoteReducer'
-import filterReducer, { setAnecdotesToShow } from './reducers/filterReducer'
+import anecdoteReducer, { initializeAnecdotes } from './reducers/anecdoteReducer'
+import filterReducer from './reducers/filterReducer'
 import anecdoteService from './services/anecdotes'
 
 const store = configureStore({
   reducer: {
     anecdotes: anecdoteReducer,
     notification: notificationReducer,
-    anecdotesToShow: filterReducer
+    filterString: filterReducer
   }
 })
 
-anecdoteService.getAll().then(anecdotes => {
-  // store.dispatch(setAnecdotes(anecdotes))
+anecdoteService.getAll().then(() => {
   store.dispatch(initializeAnecdotes())
-  store.dispatch(setAnecdotesToShow(anecdotes))
 })
 
 export default store
